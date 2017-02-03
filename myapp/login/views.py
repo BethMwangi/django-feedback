@@ -1,4 +1,6 @@
-from django.forms import *
+from .forms import RegistrationForm
+# from django.forms import RegistrationForm
+from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout , login, get_user_model
 from django.views.decorators.csrf import csrf_protect
@@ -9,6 +11,8 @@ from django.template import RequestContext
 from .models import Feedback
 from django.views.decorators.csrf import csrf_exempt
  
+
+
 @csrf_exempt
 
 def register(request):
@@ -45,6 +49,7 @@ def logout_page(request):
 
  # this login required decorator is to not allow  any  
 # view without authenticating
+@csrf_exempt
 @login_required
 def home(request):
     return render_to_response(
@@ -54,8 +59,8 @@ def home(request):
       
 
 
-@csrf_exempt
-# @login_required
+
+@login_required
 def post_feedback(request):
     if request.method == 'POST':
         # Create a form instance and populate it with data from the request (binding):
@@ -72,7 +77,7 @@ def post_feedback(request):
             post.save()
             
 
-            return HttpResponseRedirect('/post_list/')
+            return HttpResponseRedirect('post_detail')
 
         else:
             form = FeedbackForm()
@@ -85,10 +90,8 @@ def post_feedback(request):
     )
  
 
- 
-
-@csrf_exempt        
-def post_list(request):
-    posts = Feedback.objects.filter().order_by('username')
-    return render_to_response(request, 'post_list.html', {'posts': posts})
+        
+def post_detail(request):
+    posts = get_object_or_404(Feedback, pk=pk)
+    return render_to_response(request, 'post_detail.html', {'posts': posts})
 
