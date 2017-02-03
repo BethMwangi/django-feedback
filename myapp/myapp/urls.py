@@ -28,4 +28,5 @@ urlpatterns =[
     url(r'^register/$', register, name='register'),
     url(r'^register/success/$', register_success, name='register_success'),
     url(r'^home/$', home, name='home'),
+    url(r'^post_list/$', post_list, name='post_list'),
 ]

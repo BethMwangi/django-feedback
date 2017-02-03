@@ -54,7 +54,8 @@ def home(request):
       
 
 
-@login_required
+@csrf_exempt
+# @login_required
 def post_feedback(request):
     if request.method == 'POST':
         # Create a form instance and populate it with data from the request (binding):
@@ -78,8 +79,16 @@ def post_feedback(request):
             variables = RequestContext(request, {
     'form': form
     })
-         
+    return render_to_response(
+    'home.html',
+    variables, RequestContext(request)
+    )
+ 
+
+ 
+
+@csrf_exempt        
 def post_list(request):
-    posts = Post.objects.filter(username).order_by('username')
-    return render(request, 'post_list.html', {'posts': posts})
+    posts = Feedback.objects.filter().order_by('username')
+    return render_to_response(request, 'post_list.html', {'posts': posts})
 
