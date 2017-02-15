@@ -78,16 +78,17 @@ def post_feedback(request):
             
 
             return HttpResponseRedirect('post_detail')
+            # return HttpResponse("Hello, world.")
 
         else:
             form = FeedbackForm()
             variables = RequestContext(request, {
     'form': form
     })
-    return render_to_response(
-    'home.html',
-    variables, RequestContext(request)
-    )
+    # return render_to_response(
+    # 'home.html',
+    # variables, RequestContext(request)
+    # )
  
 
         
