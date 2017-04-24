@@ -15,8 +15,8 @@ The feedback data should only be viewed by an admin/superuser who can then expor
  The app depends on multiple packages;
 
    1.**Django Framework**- A web framework for Python.
-   2. **PostgreSQL 9.5**
-   3. **Twitter Bootstrap v3 (css and Javascript)**
+   2.**PostgreSQL 9.5**
+   3.**Twitter Bootstrap v3 (css and Javascript)**
 
    # Installation and Setup
 
