@@ -14,9 +14,9 @@ The feedback data should only be viewed by an admin/superuser who can then expor
   # Dependencies
  The app depends on multiple packages;
 
-   1.**Django Framework**- A web framework for Python.
-   2.**PostgreSQL 9.5**
-   3.**Twitter Bootstrap v3 (css and Javascript)**
+1.**Django Framework**- A web framework for Python.
+2.**PostgreSQL 9.5**
+3.**Twitter Bootstrap v3 (css and Javascript)**
 
    # Installation and Setup
 
@@ -28,6 +28,7 @@ $  pip install virtual env
 $ . venv/bin/activate
 $  cd django-feedback/
 $ pip install -r requirements.txt
+```
 
 
  ## To execute the demo run the commands
