@@ -24,7 +24,7 @@ The feedback data should only be viewed by an admin/superuser who can then expor
 
 ```sh
 $ git clone https://github.com/BethMwangi/django-feedback.git
-$  pip install virtual env
+$  pip install virtualenv venv
 $ . venv/bin/activate
 $  cd django-feedback/
 $ pip install -r requirements.txt
