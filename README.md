@@ -34,5 +34,5 @@ $ pip install -r requirements.txt
  ## To execute the demo run the commands
 
  ```sh
-$ PYTHONPATH=../ python ./manage.py migrate
-$ PYTHONPATH=../ python ./manage.py runserver
+$ python manage.py migrate
+$ python manage.py runserver
