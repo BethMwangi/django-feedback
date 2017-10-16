@@ -33,6 +33,7 @@ $ pip install -r requirements.txt
 
  ## To execute the demo run the commands
 
- ```sh
+ ```sh 
+$  cd my-app/
 $ python manage.py migrate
 $ python manage.py runserver
